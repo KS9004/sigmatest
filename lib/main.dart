@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
             if (snapshot.hasData) {
               List<SigmaModel> data = snapshot.data;
               return ListView.builder(
-                  itemCount:data.length,
+                  itemCount:data.length-2,
                   itemBuilder:(context,index){
                     final sigmadb = SigmaModel(id: data[index].id,
                         description: data[index].description,

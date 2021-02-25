@@ -9,7 +9,7 @@ Future<List<SigmaModel>> SigmaApi() async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    List jsonResponse = json.decode(response.body)["tags"];
+    List jsonResponse = await json.decode(response.body)["tags"];
     return jsonResponse.map((e) => SigmaModel.fromJson(e)).toList();
   } else {
     // If the server did not return a 200 OK response,
